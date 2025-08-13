@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizza Creator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'primary': '#FF6B00',
+            'secondary': '#F7F2ED',
+            'text-primary': '#2C2C2C',
+            'text-secondary': '#8A8A8A',
+            'text-icon': '#FFFFFF',
+            'accent-topping-active': '#FFF4E6',
+            'primary-blue': '#0D6EFD',
+            'light-blue-bg': '#F0F6FF',
+          },
+          spacing: {
+              'xs': '4px',
+              'sm': '8px',
+              'md': '16px',
+              'lg': '24px',
+              'xl': '32px',
+          },
+          boxShadow: {
+            'cardShadow': '0px 4px 16px rgba(0, 0, 0, 0.05)',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    @media print {
+      body > #root, body > #cart-portal, body > #checkout-portal {
+        display: none;
+      }
+      #printable-ticket-container {
+        display: block;
+      }
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+    "react-dom": "https://esm.sh/react-dom@^19.1.1",
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "react": "https://esm.sh/react@^19.1.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-secondary">
+  <div id="root"></div>
+  <div id="cart-portal"></div>
+  <div id="checkout-portal"></div>
+  <div id="printable-ticket-container"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
